@@ -9,7 +9,8 @@ import javax.swing.border.LineBorder;
 
 public class color_game extends JFrame {
 	public color_game() {
-
+		setTitle("Color and Text");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Container a = getContentPane();
 		a.setLayout(null); // 컨팬트팬의 배치자관리자 제거
@@ -18,38 +19,47 @@ public class color_game extends JFrame {
 		JLabel rule = new JLabel(
 				"<html><body style='text-align:center;'>-RULE-<br/>[STRT] 버튼의 글자색과 동일한 배경색 박스를 클릭<br/>클릭한 박스에 적힌 글자와 동일한 배경색 클릭</body></html>",
 				JLabel.CENTER);
-		Font fontr = new Font("나눔스퀘어_ac", Font.PLAIN, 15);
+		Font fontr = new Font("나눔스퀘어_ac", Font.PLAIN, 17);
 		rule.setFont(fontr);
-		rule.setForeground(Color.DARK_GRAY); // 룰 설명 폰트설정
-		rule.setSize(350, 50);
-		rule.setLocation(125, 20);
+		rule.setForeground(Color.DARK_GRAY); 
+		rule.setSize(350, 70);
+		rule.setLocation(125, 20); // 룰 설명란
 		a.add(rule);
 
 		JButton reset = new JButton("RESET");
 		JButton start = new JButton("START");
+		JButton exit = new JButton("EXIT");
 
 		reset.setBackground(new Color(255, 245, 255));
 		reset.setForeground(Color.BLACK);
-		reset.setFont(new Font("나눔스퀘어_ac", Font.BOLD, 15));
-		reset.setLocation(100, 90);
+		reset.setFont(new Font("나눔스퀘어_ac", Font.BOLD, 20));
+		reset.setLocation(100, 100);
 		reset.setSize(90, 40);
 		reset.setBorder(new LineBorder(Color.BLACK, 5, true));
+		
 		start.setBackground(new Color(245, 245, 255));
 		start.setForeground(Color.RED);
-		start.setFont(new Font("나눔스퀘어_ac", Font.BOLD, 15));
-		start.setLocation(250, 90);
+		start.setFont(new Font("나눔스퀘어_ac", Font.BOLD, 20));
+		start.setLocation(250, 100);
 		start.setSize(90, 40);
 		start.setBorder(new LineBorder(Color.BLACK, 5, true));
-
+		
+		exit.setBackground(new Color(255, 245, 255));
+		exit.setForeground(Color.BLACK);
+		exit.setFont(new Font("나눔스퀘어_ac", Font.BOLD, 20));
+		exit.setLocation(400, 100);
+		exit.setSize(90, 40);
+		exit.setBorder(new LineBorder(Color.BLACK, 5, true));
+		
+		// 리셋 스타트 엑시트 버튼
 		a.add(reset); 
 		a.add(start);
-		
-		setTitle("Color and Text");
+		a.add(exit);
+;		
 		setSize(600, 700); // 프레임 크기
 		setVisible(true); // 프레임 출력
 		setResizable(false); // 프레임 사이즈변경가능 유무
 		setLocationRelativeTo(null); // 프레임 중앙정렬
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 	public static void main(String[] args) {
